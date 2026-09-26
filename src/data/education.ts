@@ -16,18 +16,18 @@ export const DEGREES = [
 export const CERTIFICATIONS = [
   {
     id: 1,
-    title: 'Microsoft Certified: Azure Fundamentals (AZ-900)',
+    title: 'Google Cloud Platform Gemini AI Fundamentals',
   },
   {
     id: 2,
-    title: 'Microsoft Certified: Azure AI Fundamentals (AI-900)',
+    title: 'Microsoft Certified: Azure Fundamentals (AZ-900)',
   },
   {
     id: 3,
-    title: 'Data Camp AI Engineering',
+    title: 'Microsoft Certified: Azure AI Fundamentals (AI-900)',
   },
   {
     id: 4,
-    title: 'University of Leicester Award Gold',
+    title: 'Data Camp AI Engineering',
   },
 ];
