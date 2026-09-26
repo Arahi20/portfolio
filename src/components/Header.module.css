@@ -1,0 +1,83 @@
+.header {
+  margin-bottom: 1.25rem;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+.themeToggle {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 2.25rem;
+  height: 2.25rem;
+  position: relative;
+}
+.themeToggle:hover {
+  background-color: var(--hover-bg);
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tabButton {
+  position: relative;
+}
+
+.tabButtonActive {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tabButtonInactive {
+  color: var(--text-quaternary);
+}
+.tabButtonInactive:hover {
+  color: var(--hover-text);
+}
+
+.activeIndicator {
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--bg-inverted);
+}
