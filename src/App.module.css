@@ -1,6 +1,7 @@
 .container {
   min-height: 100vh;
   max-width: 48rem; /* 3xl */
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.5rem;
@@ -20,4 +21,6 @@
 
 .mainContent {
   flex-grow: 1;
+  min-width: 0;
+  width: 100%;
 }
