@@ -32,7 +32,7 @@
   color: var(--text-tertiary);
   max-width: 36rem;
   font-weight: 300;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
 }
 @media (min-width: 768px) {
   .paragraphSmall {
@@ -43,6 +43,13 @@
 .highlight {
   color: var(--text-primary);
   font-weight: 500;
+}
+
+.actionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .linksContainer {
