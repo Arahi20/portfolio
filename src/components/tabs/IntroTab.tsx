@@ -2,6 +2,7 @@ import { FiArrowUpRight, FiLinkedin, FiMail } from 'react-icons/fi';
 import styles from './IntroTab.module.css';
 import { INTRO_DATA } from '../../data/intro';
 import ProfilePicture from '../ProfilePicture';
+import CtaButton from '../CtaButton';
 
 export default function IntroTab() {
   return (
@@ -13,21 +14,24 @@ export default function IntroTab() {
         </p>
         <p className={styles.paragraphSmall}>{INTRO_DATA.paragraph2}</p>
 
-        <div className={styles.linksContainer}>
-          {INTRO_DATA.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.url}
-              target={link.url.startsWith('http') ? '_blank' : undefined}
-              rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className={styles.link}
-            >
-              {link.icon === 'linkedin' && <FiLinkedin />}
-              {link.icon === 'mail' && <FiMail />}
-              {link.icon === 'arrow-up-right' && <FiArrowUpRight />}
-              {link.label}
-            </a>
-          ))}
+        <div className={styles.actionContainer}>
+          <CtaButton href="mailto:Ahmed_Rahi@icloud.com">Let's Talk</CtaButton>
+          <div className={styles.linksContainer}>
+            {INTRO_DATA.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.url}
+                target={link.url.startsWith('http') ? '_blank' : undefined}
+                rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={styles.link}
+              >
+                {link.icon === 'linkedin' && <FiLinkedin />}
+                {link.icon === 'mail' && <FiMail />}
+                {link.icon === 'arrow-up-right' && <FiArrowUpRight />}
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

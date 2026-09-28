@@ -3,7 +3,7 @@ export const INTRO_DATA = {
     'A Software Engineer specializing in full-stack development. Currently building scalable micro-frontends and robust backend features at',
   highlight: 'Quantium',
   paragraph2:
-    'My core expertise lies in building end-to-end solutions using C# on the backend and React/TypeScript on the frontend. Beyond the application layer, I have strong experience managing infrastructure and deployments with Kubernetes, Helm, and CI/CD pipelines. Backed by an MSc in Advanced Computer Science (Artificial Intelligence), I also explore emerging spaces like AI development and autonomous agents, bridging the gap between scalable engineering and intelligent systems.',
+    'With an MSc in Artificial Intelligence and a deep interest in low-level systems, I specialize in bridging the gap between heavy, complex data processing and clean, accessible user interfaces. My core expertise lies in C#, React, and DevOps, building end-to-end solutions from intelligent algorithms to Kubernetes deployments.',
   links: [
     {
       label: 'LinkedIn',
