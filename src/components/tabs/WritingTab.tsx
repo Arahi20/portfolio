@@ -13,9 +13,18 @@ export default function WritingTab() {
           rel="noopener noreferrer"
           className={styles.item}
         >
-          <h3 className={styles.title}>
-            {article.title} <FiArrowUpRight className={styles.icon} />
-          </h3>
+          {article.date && (
+            <div className={styles.meta}>
+              <span>{article.date}</span>
+              <span className={styles.dot}>·</span>
+              <span>{article.readTime}</span>
+            </div>
+          )}
+          <div className={styles.titleLink}>
+            <h3 className={styles.title}>
+              {article.title} <FiArrowUpRight className={styles.icon} />
+            </h3>
+          </div>
           <p className={styles.description}>{article.description}</p>
         </a>
       ))}
