@@ -1,7 +1,7 @@
 export const DEGREES = [
   {
     id: 1,
-    title: 'MSc Advanced Computer Science (AI)',
+    title: 'MSc Advanced Computer Science (Artificial Intelligence)',
     year: '2024',
     university: 'University of Leeds',
   },

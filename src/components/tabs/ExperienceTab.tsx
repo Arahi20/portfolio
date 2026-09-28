@@ -5,7 +5,7 @@ export default function ExperienceTab() {
   return (
     <div className={styles.container}>
       {EXPERIENCE_DATA.map((job) => (
-        <div key={job.id} className="group">
+        <div key={job.id} className={styles.item}>
           <div className={styles.header}>
             <h3 className={styles.title}>
               {job.role}, {job.company}

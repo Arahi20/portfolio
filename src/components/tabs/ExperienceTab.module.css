@@ -1,7 +1,19 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2.5rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2.5rem;
+}
+
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .header {
