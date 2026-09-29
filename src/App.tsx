@@ -41,7 +41,7 @@ export default function App() {
       />
 
       <main className={styles.mainContent}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 10, filter: 'blur(4px)' }}
