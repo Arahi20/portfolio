@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# Ahmed Rahi — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio website built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+Live deployment: [ahmed-rahi.com](https://ahmed-rahi.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
+- **Core**: React 19, TypeScript, Vite
+- **UI & Animation**: Framer Motion, CSS Modules
+- **Quality & Testing**: Vitest, React Testing Library, ESLint, Oxlint, Prettier
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Development
 
-## Expanding the Oxlint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+# Start local dev server
+npm run dev
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+# Run test suite
+npm test
+
+# Lint and format
+npm run lint
+npm run format:check
+
+# Production build
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Contact
+
+- **Website**: [ahmed-rahi.com](https://ahmed-rahi.com)
+- **GitHub**: [github.com/Arahi20](https://github.com/Arahi20)
+- **LinkedIn**: [linkedin.com/in/ahmed-rahi-8576a3217](https://www.linkedin.com/in/ahmed-rahi-8576a3217)

@@ -6,16 +6,21 @@ export default function WorkTab() {
   return (
     <div className={styles.container}>
       {WORK_DATA.map((work) => (
-        <a
-          key={work.id}
-          href={work.link}
-          target={work.link.startsWith('http') ? '_blank' : undefined}
-          rel={work.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className={styles.item}
-        >
+        <article key={work.id} className={styles.item}>
           <div className={styles.header}>
             <h3 className={styles.title}>
-              {work.title} <FiArrowUpRight className={styles.icon} />
+              {work.link ? (
+                <a
+                  href={work.link}
+                  target={work.link.startsWith('http') ? '_blank' : undefined}
+                  rel={work.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className={styles.titleLink}
+                >
+                  {work.title} <FiArrowUpRight className={styles.icon} aria-hidden="true" />
+                </a>
+              ) : (
+                <span className={styles.titleStatic}>{work.title}</span>
+              )}
             </h3>
             <span className={styles.date}>{work.date}</span>
           </div>
@@ -26,6 +31,7 @@ export default function WorkTab() {
                 src={work.video}
                 title={work.title}
                 className={styles.projectVideo}
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
@@ -33,11 +39,19 @@ export default function WorkTab() {
           )}
           {work.image && (
             <div className={styles.imageWrapper}>
-              <img src={work.image} alt={work.title} className={styles.projectImage} />
+              <img
+                src={work.image}
+                alt={`Screenshot of ${work.title}`}
+                className={styles.projectImage}
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={468}
+              />
             </div>
           )}
           <p className={styles.tech}>{work.tech}</p>
-        </a>
+        </article>
       ))}
     </div>
   );
