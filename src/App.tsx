@@ -11,15 +11,23 @@ import WritingTab from './components/tabs/WritingTab';
 import EducationTab from './components/tabs/EducationTab';
 import styles from './App.module.css';
 
-function getTabFromHash(): Tab {
+function getTabFromLocation(): Tab {
   if (typeof window === 'undefined') return 'Intro';
+  // Check pathname first (e.g., /work, /experience)
+  const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+  const matchedPath = TABS.find((t) => t.toLowerCase() === path);
+  if (matchedPath) return matchedPath;
+
+  // Backward compatibility: check hash in case of legacy bookmarked links like #work
   const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
-  const matched = TABS.find((t) => t.toLowerCase() === hash);
-  return matched || 'Intro';
+  const matchedHash = TABS.find((t) => t.toLowerCase() === hash);
+  if (matchedHash) return matchedHash;
+
+  return 'Intro';
 }
 
 export default function App() {
-  const [activeTab, setActiveTabState] = useState<Tab>(getTabFromHash);
+  const [activeTab, setActiveTabState] = useState<Tab>(getTabFromLocation);
 
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
@@ -35,28 +43,34 @@ export default function App() {
   });
 
   useEffect(() => {
-    const handleHashChange = () => {
-      setActiveTabState(getTabFromHash());
+    // If user arrived with a legacy hash (e.g. /#work), normalize to clean path (/work)
+    if (window.location.hash) {
+      const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+      const matched = TABS.find((t) => t.toLowerCase() === hash);
+      if (matched) {
+        const cleanPath = matched === 'Intro' ? '/' : `/${matched.toLowerCase()}`;
+        window.history.replaceState(null, '', cleanPath);
+      }
+    }
+
+    const handleLocationChange = () => {
+      setActiveTabState(getTabFromLocation());
     };
 
-    window.addEventListener('hashchange', handleHashChange);
-    window.addEventListener('popstate', handleHashChange);
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-      window.removeEventListener('popstate', handleHashChange);
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
     };
   }, []);
 
   const setActiveTab = useCallback((tab: Tab) => {
     setActiveTabState(tab);
-    const targetHash = tab === 'Intro' ? '' : `#${tab.toLowerCase()}`;
-    const currentHash = window.location.hash;
-    if (currentHash !== targetHash && !(currentHash === '' && targetHash === '')) {
-      if (targetHash === '') {
-        window.history.pushState(null, '', window.location.pathname + window.location.search);
-      } else {
-        window.history.pushState(null, '', targetHash);
-      }
+    const targetPath = tab === 'Intro' ? '/' : `/${tab.toLowerCase()}`;
+    const currentPath = window.location.pathname;
+    if (currentPath !== targetPath || window.location.hash) {
+      window.history.pushState(null, '', targetPath);
     }
   }, []);
 
