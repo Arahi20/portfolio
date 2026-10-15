@@ -1,4 +1,15 @@
-export const WORK_DATA = [
+export interface WorkItem {
+  id: number;
+  title: string;
+  date: string;
+  description: string;
+  tech: string;
+  link?: string;
+  video?: string;
+  image?: string;
+}
+
+export const WORK_DATA: WorkItem[] = [
   {
     id: 1,
     title: 'Kinect Fitness Playground',
@@ -26,6 +37,5 @@ export const WORK_DATA = [
     description:
       'Designed and developed a versatile 2D game engine using C# and MonoGame, equipped with physics and collision handling.',
     tech: 'C# · MonoGame',
-    link: '#',
   },
 ];

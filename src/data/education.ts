@@ -2,13 +2,13 @@ export const DEGREES = [
   {
     id: 1,
     title: 'MSc Advanced Computer Science (Artificial Intelligence)',
-    year: '2024',
+    year: '2023 — 2024',
     university: 'University of Leeds',
   },
   {
     id: 2,
     title: 'BSc Computer Science (First-Class)',
-    year: '2023',
+    year: '2020 — 2023',
     university: 'University of Leicester',
   },
 ];

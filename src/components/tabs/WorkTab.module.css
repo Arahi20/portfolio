@@ -5,7 +5,15 @@
 }
 
 .item {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2.5rem;
+}
+
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .header {
@@ -25,25 +33,36 @@
   font-size: 1.125rem;
   font-weight: 500;
   color: var(--text-primary);
-  display: flex;
+}
+
+.titleLink {
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
   transition: color 0.2s;
 }
 
-.item:hover .title {
+.titleLink:hover,
+.titleLink:focus-visible {
   color: var(--text-secondary);
+}
+
+.titleStatic {
+  color: var(--text-primary);
 }
 
 .icon {
   width: 1rem;
   height: 1rem;
-  opacity: 0;
-  transform: translateY(-4px);
+  opacity: 0.4;
+  transform: translateY(-2px);
   transition: all 0.2s;
 }
 
-.item:hover .icon {
+.titleLink:hover .icon,
+.titleLink:focus-visible .icon {
   opacity: 1;
   transform: translateY(0);
 }
