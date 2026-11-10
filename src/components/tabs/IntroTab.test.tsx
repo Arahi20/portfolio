@@ -13,6 +13,10 @@ describe('IntroTab Component', () => {
       'href',
       'mailto:Ahmed_Rahi@icloud.com'
     );
+    expect(screen.getByRole('link', { name: /view cv/i })).toHaveAttribute(
+      'href',
+      '/assets/cv.pdf'
+    );
   });
 
   it('renders all social and contact links with correct URLs', () => {

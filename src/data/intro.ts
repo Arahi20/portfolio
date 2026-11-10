@@ -1,10 +1,11 @@
 export const INTRO_DATA = {
   paragraph1:
-    'A Software Engineer specializing in full-stack development. Currently building scalable micro-frontends and robust backend features at',
+    'A Software Engineer specializing in full-stack development across the entire software lifecycle at',
   highlight: 'Quantium',
   highlightUrl: 'https://quantium.com',
   paragraph2:
-    'With an MSc in Artificial Intelligence and a deep interest in low-level systems, I specialize in bridging the gap between heavy, complex data processing and clean, accessible user interfaces. My core expertise lies in C#, React, and DevOps, building end-to-end solutions from intelligent algorithms to Kubernetes deployments.',
+    'With an MSc in Advanced Computer Science (Artificial Intelligence) from the University of Leeds and a First-Class BSc in Computer Science from the University of Leicester, I have delivered full-stack features and led architectural migrations on a retail analytics platform serving thousands of clients. Passionate about building scalable, high-quality software and exploring emerging technologies.',
+  cvUrl: '/assets/cv.pdf',
   links: [
     {
       label: 'GitHub',

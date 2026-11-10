@@ -20,15 +20,17 @@ describe('App Integration', () => {
     expect(screen.getByText(/© \d{4}/)).toBeInTheDocument();
   });
 
-  it('switches to Experience tab and updates pathname when clicked', () => {
+  it('switches to Experience tab and updates pathname when clicked', async () => {
     render(<App />);
 
     const expTab = screen.getByRole('tab', { name: 'Experience' });
     fireEvent.click(expTab);
 
-    expect(screen.getByText(/Quantium/i)).toBeInTheDocument();
-    expect(screen.getByText(/Micro-Frontend/i)).toBeInTheDocument();
     expect(window.location.pathname).toBe('/experience');
+    expect(await screen.findByRole('link', { name: /view full cv/i })).toHaveAttribute(
+      'href',
+      '/assets/cv.pdf'
+    );
   });
 
   it('loads tab from URL pathname on initial render', () => {
