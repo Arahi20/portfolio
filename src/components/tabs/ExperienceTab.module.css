@@ -62,3 +62,39 @@
 .list li::marker {
   color: var(--border-strong);
 }
+
+.cvFooter {
+  display: flex;
+  align-items: center;
+}
+
+.cvLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cvLink:hover,
+.cvLink:focus-visible {
+  color: var(--text-primary);
+}
+
+.cvIcon {
+  width: 1rem;
+  height: 1rem;
+  opacity: 0.6;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.cvLink:hover .cvIcon,
+.cvLink:focus-visible .cvIcon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}

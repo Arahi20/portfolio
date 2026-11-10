@@ -15,8 +15,8 @@ export const WORK_DATA: WorkItem[] = [
     title: 'Kinect Fitness Playground',
     date: 'Jan 2026',
     description:
-      'Built a Python fitness application using the Microsoft Xbox Kinect V2 for real-time body movement tracking and rep counting. Implemented experimental heart rate monitoring using Photoplethysmography (PPG) via visual detection.',
-    tech: 'Python · OpenCV · NumPy · Pygame',
+      'Built a Python fitness application using the Microsoft Xbox Kinect V2 for real-time body movement tracking, automatic rep counting, and form feedback. Implemented experimental heart rate monitoring using Photoplethysmography (PPG) via visual detection, alongside a personal leaderboard and form quality tracker.',
+    tech: 'Python · OpenCV · NumPy · SciPy · Pygame',
     link: 'https://github.com/Arahi20/Kinect-Fitness',
     video: 'https://www.youtube.com/embed/UJg7q93IMOE',
   },
@@ -35,7 +35,7 @@ export const WORK_DATA: WorkItem[] = [
     title: 'Covert Woods (2D Engine)',
     date: 'Nov 2022',
     description:
-      'Designed and developed a versatile 2D game engine using C# and MonoGame, equipped with physics and collision handling.',
+      'Designed and built a versatile 2D game engine in C# and MonoGame with physics and collision handling, completed as my undergraduate dissertation.',
     tech: 'C# · MonoGame',
   },
 ];

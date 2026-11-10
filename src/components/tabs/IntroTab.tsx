@@ -28,7 +28,17 @@ export default function IntroTab() {
         <p className={styles.paragraphSmall}>{INTRO_DATA.paragraph2}</p>
 
         <div className={styles.actionContainer}>
-          <CtaButton href="mailto:Ahmed_Rahi@icloud.com">Let's Talk</CtaButton>
+          <div className={styles.ctaGroup}>
+            <CtaButton href="mailto:Ahmed_Rahi@icloud.com">Let's Talk</CtaButton>
+            <CtaButton
+              href={INTRO_DATA.cvUrl}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View CV <FiArrowUpRight aria-hidden="true" />
+            </CtaButton>
+          </div>
           <div className={styles.linksContainer}>
             {INTRO_DATA.links.map((link) => (
               <a

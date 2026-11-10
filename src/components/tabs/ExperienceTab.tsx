@@ -1,5 +1,7 @@
+import { FiArrowUpRight } from 'react-icons/fi';
 import styles from './ExperienceTab.module.css';
 import { EXPERIENCE_DATA } from '../../data/experience';
+import { INTRO_DATA } from '../../data/intro';
 
 export default function ExperienceTab() {
   return (
@@ -19,6 +21,18 @@ export default function ExperienceTab() {
           </ul>
         </div>
       ))}
+
+      <div className={styles.cvFooter}>
+        <a
+          href={INTRO_DATA.cvUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.cvLink}
+        >
+          <span>View Full CV</span>
+          <FiArrowUpRight className={styles.cvIcon} aria-hidden="true" />
+        </a>
+      </div>
     </div>
   );
 }
